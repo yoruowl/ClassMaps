@@ -15,6 +15,10 @@
     <string name="app_name">ClassMaps</string>
     <string name="map_background_desc">Campus map background</string>
     <string name="room_finder_title">Room Finder</string>
+    <string name="room_finder_summary">Building: %1$s\nRoom#: %2$s\nElevator: %3$s\nInside: %4$s</string>
+    <string name="room_finder_true">True</string>
+    <string name="room_finder_false">False</string>
+    <string name="room_finder_not_set">Not set</string>
 
     <!-- Arrival banner and survey header text -->
     <string name="arrived_banner">Arrived at Schneider Hall!</string>

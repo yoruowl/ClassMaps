@@ -47,6 +47,7 @@
                 android:minWidth="128dp"
                 android:text="Building:"/>
             <Spinner
+                android:id="@+id/room_finder_building"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/building_options">
@@ -65,6 +66,7 @@
                 android:minWidth="128dp"
                 android:text="Room#:"/>
             <EditText
+                android:id="@+id/room_finder_room_number"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -81,14 +83,17 @@
                 android:minWidth="128dp"
                 android:text="Elevator:"/>
             <RadioGroup
+                android:id="@+id/room_finder_elevator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <RadioButton
+                    android:id="@+id/room_finder_elevator_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"/>
                 <RadioButton
+                    android:id="@+id/room_finder_elevator_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -108,14 +113,17 @@
                 android:minWidth="128dp"
                 android:text="Inside:"/>
             <RadioGroup
+                android:id="@+id/room_finder_inside"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <RadioButton
+                    android:id="@+id/room_finder_inside_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes"/>
                 <RadioButton
+                    android:id="@+id/room_finder_inside_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -133,6 +141,7 @@
         android:layout_marginTop="12dp"
         android:background="#CCCCCC" />
     <Button
+        android:id="@+id/room_finder_go_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
