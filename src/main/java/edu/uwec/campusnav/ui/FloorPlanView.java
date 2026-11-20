@@ -125,11 +125,9 @@ public class FloorPlanView extends View {
         boolean isEntryFloor = floor == 1;
         boolean isDestinationFloor = floor == destinationFloor;
 
-        // Shell
         fill(canvas, OUTER, floorPaint, w, h);
         stroke(canvas, OUTER, w, h);
 
-        // Rooms
         fill(canvas, LEFT_ROOMS, roomPaint, w, h);
         fill(canvas, RIGHT_ROOMS, roomPaint, w, h);
         fill(canvas, CENTER_BLOCK, roomPaint, w, h);
@@ -158,7 +156,6 @@ public class FloorPlanView extends View {
         if (isEntryFloor) label(canvas, "Entrance", ENTRANCE[0] * w, 0.92f * h);
         if (isDestinationFloor) label(canvas, destinationRoom, DEST_ROOM.centerX() * w, DEST_ROOM.centerY() * h);
 
-        // Route + user marker
         float[][] route = routeForThisFloor(isEntryFloor, isDestinationFloor);
         if (route.length > 1) {
             path.reset();

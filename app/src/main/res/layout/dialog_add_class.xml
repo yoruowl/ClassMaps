@@ -1,26 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<!--
-  VIEW IDs USED BY ScheduleActivity.java ("Add a Class" pop-up):
-    * class_name_input (EditText)      : Class name, required.
-    * lecture_hall_spinner (Spinner)   : Dropdown of lecture halls (R.array.lecture_halls).
-    * room_number_input (EditText)     : Room number, required.
-    * start_time_button,
-      end_time_button (Button)         : Open a TimePickerDialog; show the chosen time.
-    * day_mon .. day_fri (CheckBox)    : Days the class meets; at least one required.
-    * save_class_button (Button)       : Validates input and adds the class to the schedule.
-    * cancel_class_button (Button)     : Closes the pop-up without saving.
--->
-
-
 <!-- ScrollView so the form still fits on small screens when the keyboard is open -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#FFFFFF">
 
-    <!-- White card styled like the survey card -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +19,6 @@
             android:gravity="center"
             android:text="@string/add_class_title" />
 
-        <!-- Class Name -->
         <TextView
             style="@style/BaseSurveyText"
             android:layout_width="wrap_content"
@@ -52,7 +35,6 @@
             android:importantForAutofill="no"
             android:inputType="textCapWords" />
 
-        <!-- Lecture Hall dropdown -->
         <TextView
             style="@style/BaseSurveyText"
             android:layout_width="wrap_content"
@@ -69,7 +51,6 @@
             android:popupBackground="#FFFFFF"
             android:spinnerMode="dropdown" />
 
-        <!-- Room Number -->
         <TextView
             style="@style/BaseSurveyText"
             android:layout_width="wrap_content"
@@ -86,7 +67,6 @@
             android:importantForAutofill="no"
             android:inputType="textCapCharacters" />
 
-        <!-- Time frame: start and end, each opens a time picker -->
         <TextView
             style="@style/BaseSurveyText"
             android:layout_width="wrap_content"
@@ -124,7 +104,6 @@
                 android:text="@string/end_time_placeholder" />
         </LinearLayout>
 
-        <!-- Days of the week -->
         <TextView
             style="@style/BaseSurveyText"
             android:layout_width="wrap_content"
@@ -179,7 +158,6 @@
                 android:text="@string/day_fri" />
         </LinearLayout>
 
-        <!-- Same button hierarchy as the survey: contained primary, text secondary -->
         <Button
             android:id="@+id/save_class_button"
             style="@style/PrimaryActionButton"

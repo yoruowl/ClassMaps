@@ -1,16 +1,3 @@
-<!--
-  STRING KEYS OVERVIEW:
-    * Survey Screen        : arrived_banner, route_completed, survey_subtitle, how_was_route,
-                             star_unselected/selected, encounter_obstacle, find_room_easily,
-                             no_label, yes_label, submit_button, maybe_later_button,
-                             survey_dismissed_msg.
-    * Hazard Report Screen : back_arrow, hazard_report_title, warning_icon_desc,
-                             hazard_type_label, hazard_type_placeholder, hazard_*,
-                             select_location_button, please_select_hazard_msg,
-                             select_location_msg_prefix.
--->
-
-
 <resources>
     <string name="app_name">ClassMaps</string>
     <string name="map_background_desc">Campus map background</string>
@@ -20,35 +7,29 @@
     <string name="room_finder_false">False</string>
     <string name="room_finder_not_set">Not set</string>
 
-    <!-- Arrival banner and survey header text -->
     <string name="arrived_banner">Arrived at Schneider Hall!</string>
     <string name="route_completed">Route Completed</string>
     <string name="survey_subtitle">Help us improve! Take this 1-min survey.</string>
 
-    <!-- Star rating prompt and star symbols -->
     <string name="how_was_route">How was route?</string>
     <string name="star_unselected">☆</string>
     <string name="star_selected">★</string>
 
-    <!-- Yes/No toggle prompts and consistent sentence-case labels -->
     <string name="encounter_obstacle">Encounter obstacle?</string>
     <string name="find_room_easily">Did you find the room easily?</string>
     <string name="no_label">No</string>
     <string name="yes_label">Yes</string>
 
-    <!-- Survey action buttons and feedback -->
     <string name="submit_button">Submit</string>
     <string name="maybe_later_button">Maybe Later</string>
     <string name="survey_dismissed_msg">Survey dismissed</string>
 
-    <!-- Hazard Report screen header and type prompt -->
     <string name="back_arrow">&lt;-</string>
     <string name="hazard_report_title">Hazard Report</string>
     <string name="warning_icon_desc">Hazard warning icon</string>
     <string name="hazard_type_label">Type:</string>
     <string name="hazard_type_placeholder">...</string>
 
-    <!-- Hazard type options -->
     <string name="hazard_ice">Ice</string>
     <string name="hazard_construction">Construction</string>
     <string name="hazard_closure">Closure</string>
@@ -56,18 +37,15 @@
     <string name="hazard_wet">Wet</string>
     <string name="hazard_car">Car</string>
 
-    <!-- Hazard Report bottom button and validation/toast messages -->
     <string name="select_location_button">Select Location</string>
     <string name="please_select_hazard_msg">Please select a hazard type</string>
     <string name="select_location_msg_prefix">Select location for: </string>
-  
-  <!-- Schedule screen -->
+
     <string name="schedule_app_label">Schedule</string>
     <string name="schedule_title">My Schedule</string>
     <string name="schedule_empty">No classes yet. Add one below.</string>
     <string name="add_class_button">+ Add a Class</string>
 
-    <!-- Add a Class pop-up -->
     <string name="add_class_title">Add a Class</string>
     <string name="class_name_label">Class Name</string>
     <string name="class_name_hint">e.g. HCI 350</string>
@@ -87,7 +65,6 @@
     <string name="save_class_button">Add Class</string>
     <string name="cancel_button">Cancel</string>
 
-    <!-- Add a Class validation / feedback -->
     <string name="error_required">Required</string>
     <string name="error_pick_times">Please pick a start and end time</string>
     <string name="error_end_before_start">End time must be after start time</string>

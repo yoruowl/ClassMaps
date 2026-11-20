@@ -3,7 +3,6 @@
 
     <!-- Base for the dotted Widget.CampusNav.* names below (AAPT treats the dots as inheritance). -->
     <style name="Widget.CampusNav" parent="" />
-    <!-- ===== Shared top bar (day | weather | time) ===== -->
     <style name="Widget.CampusNav.TopBar">
         <item name="android:orientation">horizontal</item>
         <item name="android:gravity">center_vertical</item>
@@ -34,7 +33,6 @@
         <item name="android:elevation">8dp</item>
     </style>
 
-    <!-- ===== Screen header (back arrow + title) ===== -->
     <style name="Widget.CampusNav.ScreenTitle">
         <item name="android:textColor">@color/primary</item>
         <item name="android:textSize">22sp</item>

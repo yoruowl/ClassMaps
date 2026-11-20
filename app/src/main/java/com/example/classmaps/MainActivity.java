@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-// MainActivity is the app's home screen and navigates to other Activities
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override

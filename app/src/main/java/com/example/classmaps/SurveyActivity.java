@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-// SurveyActivity manages the Route Completed survey screen and launches HazardReportActivity if an obstacle is reported
 public class SurveyActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button[] starButtons;
@@ -70,7 +69,6 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
                     + " | Found room: " + (foundRoomEasily ? yesText : noText);
             Toast.makeText(this, summary, Toast.LENGTH_SHORT).show();
 
-            // Open HazardReportActivity if the user switched "Encounter obstacle?" to Yes
             if (encounteredObstacle) {
                 startActivity(new Intent(this, HazardReportActivity.class));
             } else {
@@ -82,7 +80,6 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    // Updates star buttons between "★" (selected) and "☆" (unselected)
     private void updateRating(int rating) {
         selectedRating = rating;
         for (int i = 0; i < starButtons.length; i++) {

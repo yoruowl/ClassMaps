@@ -141,10 +141,6 @@ public class CampusMapView extends View {
         userArrowPaint.setColor(color(R.color.route));
     }
 
-    // ---------------------------------------------------------------------
-    // Public API
-    // ---------------------------------------------------------------------
-
     public void setOnMapTapListener(@Nullable OnMapTapListener listener) {
         tapListener = listener;
     }
