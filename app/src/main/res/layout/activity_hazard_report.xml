@@ -1,17 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<!--
-  VIEW IDs USED BY MainActivity.java (Hazard Report Screen):
-    * back_button (Button)                  : Returns to the survey screen.
-    * selected_hazard_type_text (TextView)  : Displays "..." or the chosen hazard type.
-    * hazard_ice, hazard_construction,
-      hazard_closure, hazard_obstacle,
-      hazard_wet, hazard_car (Button)       : Scrollable hazard type options.
-    * select_location_button (Button)       : Validates selection and proceeds to location step.
--->
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -52,7 +39,6 @@
                 android:text="@string/hazard_report_title"
                 android:textSize="22sp" />
 
-            <!-- Built in Android warning triangle icon -->
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -61,7 +47,6 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <!-- Middle weighted section containing "Type:" and the scrollable hazard list -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -77,14 +62,12 @@
             android:text="@string/hazard_type_label"
             android:textSize="18sp" />
 
-        <!-- Right column - selected value box ("...") above a distinct scrollable list container -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <!-- Selected hazard display box -->
             <TextView
                 android:id="@+id/selected_hazard_type_text"
                 style="@style/BaseSurveyText"
@@ -156,7 +139,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- 1dp horizontal divider line separating the hazard list from Select Location -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -164,7 +146,6 @@
         android:layout_marginBottom="16dp"
         android:background="#CCCCCC" />
 
-    <!-- Bottom primary action button -->
     <Button
         android:id="@+id/select_location_button"
         style="@style/PrimaryActionButton"

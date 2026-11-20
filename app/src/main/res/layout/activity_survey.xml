@@ -26,7 +26,6 @@
             android:orientation="vertical"
             android:padding="24dp">
 
-            <!-- Top arrival banner -->
             <TextView
                 style="@style/SurveyHeadingText"
                 android:layout_width="match_parent"
@@ -38,7 +37,6 @@
                 android:text="@string/arrived_banner"
                 android:textSize="22sp" />
 
-            <!-- Central survey card -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -69,7 +67,6 @@
                     android:layout_marginBottom="4dp"
                     android:text="@string/how_was_route" />
 
-                <!-- 5 equal width star buttons -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -117,7 +114,6 @@
                         android:text="@string/star_unselected" />
                 </LinearLayout>
 
-                <!-- Question 1 -->
                 <TextView
                     style="@style/BaseSurveyText"
                     android:layout_width="wrap_content"
@@ -150,7 +146,6 @@
                         android:text="@string/yes_label" />
                 </LinearLayout>
 
-                <!-- Question 2 -->
                 <TextView
                     style="@style/BaseSurveyText"
                     android:layout_width="wrap_content"

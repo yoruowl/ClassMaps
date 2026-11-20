@@ -21,28 +21,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-
-/*
- * ============================================================================
- * CLASS VARIABLES OVERVIEW (ScheduleActivity)
- * ============================================================================
- * Schedule Screen (activity_schedule.xml):
- *   - classes (ArrayList<ScheduledClass>) : Every class added so far (in memory only).
- *   - classListContainer (LinearLayout)   : One item_scheduled_class row per class.
- *   - emptyScheduleText (TextView)        : "No classes yet" message, hidden once a class exists.
- *
- * Add a Class pop-up (dialog_add_class.xml):
- *   - startMinutes / endMinutes (int)     : Chosen times as minutes after midnight, -1 = not picked.
- * ============================================================================
- */
-
-
-// ScheduleActivity shows the user's classes and the "Add a Class" pop-up
 public class ScheduleActivity extends AppCompatActivity {
 
     private static final int NOT_PICKED = -1;
 
-    // A single class in the schedule
     private static class ScheduledClass {
         final String name;
         final String lectureHall;
@@ -82,7 +64,6 @@ public class ScheduleActivity extends AppCompatActivity {
         addClassButton.setOnClickListener(v -> showAddClassDialog());
     }
 
-    // Opens the "Add a Class" pop-up and wires up its inputs
     private void showAddClassDialog() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -110,13 +91,11 @@ public class ScheduleActivity extends AppCompatActivity {
                 (CheckBox) dialog.findViewById(R.id.day_fri)
         };
 
-        // Lecture hall dropdown
         ArrayAdapter<CharSequence> hallAdapter = ArrayAdapter.createFromResource(
                 this, R.array.lecture_halls, R.layout.item_spinner_text);
         hallAdapter.setDropDownViewResource(R.layout.item_spinner_text);
         hallSpinner.setAdapter(hallAdapter);
 
-        // Time buttons open the system time picker
         startButton.setOnClickListener(v -> pickTime(startButton, true));
         endButton.setOnClickListener(v -> pickTime(endButton, false));
 
@@ -166,7 +145,6 @@ public class ScheduleActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    // Shows a TimePickerDialog and writes the result to the button and start/endMinutes
     private void pickTime(final Button target, final boolean isStart) {
         int current = isStart ? startMinutes : endMinutes;
         int hour = current == NOT_PICKED ? 9 : current / 60;
@@ -183,7 +161,6 @@ public class ScheduleActivity extends AppCompatActivity {
         }, hour, minute, DateFormat.is24HourFormat(this)).show();
     }
 
-    // Builds a string like "M W F" from the checked day boxes
     private String selectedDays(CheckBox[] dayBoxes) {
         StringBuilder days = new StringBuilder();
         for (int i = 0; i < dayBoxes.length; i++) {
@@ -197,7 +174,6 @@ public class ScheduleActivity extends AppCompatActivity {
         return days.toString();
     }
 
-    // Adds one class row to the schedule list and hides the empty message
     private void addClassRow(ScheduledClass scheduledClass) {
         View row = getLayoutInflater().inflate(R.layout.item_scheduled_class, classListContainer, false);
         ((TextView) row.findViewById(R.id.class_row_name)).setText(scheduledClass.name);

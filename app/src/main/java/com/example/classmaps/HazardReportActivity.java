@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-// HazardReportActivity manages the standalone Hazard Report screen
 public class HazardReportActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView selectedHazardTypeText;
@@ -70,7 +69,6 @@ public class HazardReportActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-    // Updates the "..." text box and highlights the chosen hazard button
     private void selectHazardType(int stringResId, Button selectedButton) {
         selectedHazardType = getString(stringResId);
         selectedHazardTypeText.setText(selectedHazardType);
