@@ -1,212 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<!--
-  VIEW IDs USED BY MainActivity.java (Survey Screen):
-    * star_1 .. star_5 (Button)    : 5star rating buttons
-    * obstacle_switch (Switch)     : Toggle for "Encounter obstacle?" (false = No, true = Yes).
-    * room_switch (Switch)         : Toggle for "Did you find the room easily?" (false = No, true = Yes).
-    * submit_button (Button)       : Submits survey and opens Hazard Report if obstacle_switch is checked.
-    * maybe_later_button (Button)  : Dismisses the survey with a Toast message.
--->
-
-
-<!-- FrameLayout stacks the background map image behind the foreground banner and the survey card -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Background map layer (swap the src to @drawable/map_background once your map image is in res/drawable/, keep here for now) -->
+    <!-- Background map placeholder -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="top"
         android:contentDescription="@string/map_background_desc"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background" />
 
-    <!-- Foreground layout stacking the arrival banner and survey card vertically -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- Top arrival banner with a semi transparent white card background -->
         <TextView
             style="@style/SurveyHeadingText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="24dp"
             android:background="#E6FFFFFF"
             android:gravity="center"
             android:padding="16dp"
-            android:text="@string/arrived_banner"
+            android:text="@string/app_name"
             android:textSize="22sp" />
 
-        <!-- Central survey card with semi transparent white background for better readability over the map -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F2FFFFFF"
-            android:gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView
-                style="@style/SurveyHeadingText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/route_completed" />
-
-            <TextView
-                style="@style/BaseSurveyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:text="@string/survey_subtitle" />
-
-            <TextView
-                style="@style/BaseSurveyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="@string/how_was_route" />
-
-            <!-- 5 equal width star buttons -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/star_1"
-                    style="@style/StarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/star_unselected" />
-
-                <Button
-                    android:id="@+id/star_2"
-                    style="@style/StarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/star_unselected" />
-
-                <Button
-                    android:id="@+id/star_3"
-                    style="@style/StarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/star_unselected" />
-
-                <Button
-                    android:id="@+id/star_4"
-                    style="@style/StarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/star_unselected" />
-
-                <Button
-                    android:id="@+id/star_5"
-                    style="@style/StarButtonStyle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/star_unselected" />
-            </LinearLayout>
-
-            <!-- Question 1 - "No" on left (OFF / false), "Yes" on right (ON / true) -->
-            <TextView
-                style="@style/BaseSurveyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="@string/encounter_obstacle" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/SwitchSideLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/no_label" />
-
-                <Switch
-                    android:id="@+id/obstacle_switch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    style="@style/SwitchSideLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/yes_label" />
-            </LinearLayout>
-
-            <!-- Question 2 - "No" on left (OFF / false), "Yes" on right (ON / true) -->
-            <TextView
-                style="@style/BaseSurveyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
-                android:text="@string/find_room_easily" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/SwitchSideLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/no_label" />
-
-                <Switch
-                    android:id="@+id/room_switch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    style="@style/SwitchSideLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/yes_label" />
-            </LinearLayout>
-
-            <!-- Primary contained action button -->
             <Button
-                android:id="@+id/submit_button"
+                android:id="@+id/open_schedule_button"
                 style="@style/PrimaryActionButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="@string/submit_button" />
+                android:text="@string/schedule_title" />
 
-            <!-- Secondary borderless text button -->
             <Button
-                android:id="@+id/maybe_later_button"
-                style="@style/SecondaryActionButton"
+                android:id="@+id/open_survey_button"
+                style="@style/PrimaryActionButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/maybe_later_button" />
+                android:layout_marginBottom="8dp"
+                android:text="@string/route_completed" />
 
+            <Button
+                android:id="@+id/open_hazard_button"
+                style="@style/PrimaryActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hazard_report_title" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

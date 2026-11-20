@@ -21,8 +21,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-            <!-- Schedule screen. Has its own launcher icon ("Schedule") until the app has a home screen
+
+        <activity
+            android:name=".SurveyActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".HazardReportActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Schedule screen. Has its own launcher icon ("Schedule") until the app has a home screen
              that links to it; remove the intent-filter once that exists. -->
         <activity
             android:name=".ScheduleActivity"
