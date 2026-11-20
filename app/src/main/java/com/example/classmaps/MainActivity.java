@@ -18,10 +18,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button scheduleButton = (Button) findViewById(R.id.open_schedule_button);
         Button surveyButton = (Button) findViewById(R.id.open_survey_button);
         Button hazardButton = (Button) findViewById(R.id.open_hazard_button);
+        Button roomFinderButton = (Button) findViewById(R.id.open_room_finder_button);
 
         scheduleButton.setOnClickListener(this);
         surveyButton.setOnClickListener(this);
         hazardButton.setOnClickListener(this);
+        roomFinderButton.setOnClickListener(this);
     }
 
     @Override
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, SurveyActivity.class));
         } else if (id == R.id.open_hazard_button) {
             startActivity(new Intent(this, HazardReportActivity.class));
+        } else if (id == R.id.open_room_finder_button) {
+            startActivity(new Intent(this, RoomFinderActivity.class));
         }
     }
 }

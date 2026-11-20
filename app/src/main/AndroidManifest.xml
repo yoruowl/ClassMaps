@@ -32,6 +32,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
+        <activity
+            android:name=".RoomFinderActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
         <!-- Schedule screen. Has its own launcher icon ("Schedule") until the app has a home screen
              that links to it; remove the intent-filter once that exists. -->
         <activity

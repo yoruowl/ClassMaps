@@ -14,6 +14,7 @@
 <resources>
     <string name="app_name">ClassMaps</string>
     <string name="map_background_desc">Campus map background</string>
+    <string name="room_finder_title">Room Finder</string>
 
     <!-- Arrival banner and survey header text -->
     <string name="arrived_banner">Arrived at Schneider Hall!</string>

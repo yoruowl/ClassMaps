@@ -58,7 +58,15 @@
                 style="@style/PrimaryActionButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="@string/hazard_report_title" />
+
+            <Button
+                android:id="@+id/open_room_finder_button"
+                style="@style/PrimaryActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/room_finder_title" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
