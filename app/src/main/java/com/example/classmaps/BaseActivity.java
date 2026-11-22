@@ -1,4 +1,4 @@
-package edu.uwec.campusnav;
+package com.example.classmaps;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -43,7 +43,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Light status-bar icons on top of our dark top bar.
         EdgeToEdge.enable(this, SystemBarStyle.dark(Color.TRANSPARENT));
     }
 

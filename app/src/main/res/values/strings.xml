@@ -1,6 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ClassMaps</string>
     <string name="map_background_desc">Campus map background</string>
+
+    <string name="cd_weather">Weather</string>
+    <string name="cd_back">Back</string>
+    <string name="cd_report_hazard">Report a hazard</string>
+    <string name="cd_accessibility">Accessible routes</string>
+    <string name="cd_schedule">Schedule</string>
+    <string name="cd_campus_map">Campus map</string>
+    <string name="cd_floor_plan">Floor plan</string>
+
+    <string name="action_find_room">Find Room</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_confirm">Confirm</string>
+    <string name="action_stop">Stop</string>
+    <string name="hint_hazard_location">Tap where the hazard is</string>
+
+    <string name="toast_accessibility_on">Accessible routes on (elevators and ramps)</string>
+    <string name="toast_accessibility_off">Accessible routes off</string>
+
+    <string name="dev_hint_simulate">Template: tap the map to simulate the next step</string>
+
     <string name="room_finder_title">Room Finder</string>
     <string name="room_finder_summary">Building: %1$s\nRoom#: %2$s\nElevator: %3$s\nInside: %4$s</string>
     <string name="room_finder_true">True</string>
@@ -10,16 +31,13 @@
     <string name="arrived_banner">Arrived at Schneider Hall!</string>
     <string name="route_completed">Route Completed</string>
     <string name="survey_subtitle">Help us improve! Take this 1-min survey.</string>
-
     <string name="how_was_route">How was route?</string>
     <string name="star_unselected">☆</string>
     <string name="star_selected">★</string>
-
     <string name="encounter_obstacle">Encounter obstacle?</string>
     <string name="find_room_easily">Did you find the room easily?</string>
     <string name="no_label">No</string>
     <string name="yes_label">Yes</string>
-
     <string name="submit_button">Submit</string>
     <string name="maybe_later_button">Maybe Later</string>
     <string name="survey_dismissed_msg">Survey dismissed</string>
@@ -29,23 +47,19 @@
     <string name="warning_icon_desc">Hazard warning icon</string>
     <string name="hazard_type_label">Type:</string>
     <string name="hazard_type_placeholder">...</string>
-
     <string name="hazard_ice">Ice</string>
     <string name="hazard_construction">Construction</string>
     <string name="hazard_closure">Closure</string>
     <string name="hazard_obstacle">Obstacle</string>
     <string name="hazard_wet">Wet</string>
     <string name="hazard_car">Car</string>
-
     <string name="select_location_button">Select Location</string>
     <string name="please_select_hazard_msg">Please select a hazard type</string>
     <string name="select_location_msg_prefix">Select location for: </string>
 
-    <string name="schedule_app_label">Schedule</string>
     <string name="schedule_title">My Schedule</string>
     <string name="schedule_empty">No classes yet. Add one below.</string>
     <string name="add_class_button">+ Add a Class</string>
-
     <string name="add_class_title">Add a Class</string>
     <string name="class_name_label">Class Name</string>
     <string name="class_name_hint">e.g. HCI 350</string>
@@ -64,14 +78,12 @@
     <string name="day_fri">F</string>
     <string name="save_class_button">Add Class</string>
     <string name="cancel_button">Cancel</string>
-
     <string name="error_required">Required</string>
     <string name="error_pick_times">Please pick a start and end time</string>
     <string name="error_end_before_start">End time must be after start time</string>
     <string name="error_pick_day">Please pick at least one day</string>
     <string name="class_added_msg">Class added</string>
 
-    <!-- Lecture halls for the dropdown (same buildings as the campus map) -->
     <string-array name="lecture_halls">
         <item>Centennial Hall</item>
         <item>Hibbard Hall</item>

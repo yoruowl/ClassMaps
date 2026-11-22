@@ -1,4 +1,3 @@
-<!-- Placeholder weather icon. Swap per condition once a weather API is wired up. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"

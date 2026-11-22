@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Widget.ClassMaps" parent="" />
+
+    <style name="Widget.ClassMaps.TopBar">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/top_bar_min_height</item>
+        <item name="android:paddingLeft">@dimen/bar_padding_h</item>
+        <item name="android:paddingRight">@dimen/bar_padding_h</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:background">@color/primary</item>
+    </style>
+
+    <style name="Widget.ClassMaps.TopBarText">
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.ClassMaps.BottomBar">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">@dimen/bottom_bar_min_height</item>
+        <item name="android:paddingLeft">@dimen/bar_padding_h</item>
+        <item name="android:paddingRight">@dimen/bar_padding_h</item>
+        <item name="android:paddingTop">@dimen/bar_padding_v</item>
+        <item name="android:paddingBottom">@dimen/bar_padding_v</item>
+        <item name="android:background">@color/bar_background</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+
+    <style name="Widget.ClassMaps.ScreenTitle">
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.ClassMaps.MapButton">
+        <item name="android:background">@drawable/bg_map_button</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
     <style name="BaseSurveyText">
         <item name="android:textColor">#000000</item>
         <item name="android:textSize">16sp</item>
@@ -9,7 +53,6 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <!-- Labels flanking each Switch ("No" / "Yes") -->
     <style name="SwitchSideLabel" parent="BaseSurveyText">
         <item name="android:paddingLeft">8dp</item>
         <item name="android:paddingRight">8dp</item>
@@ -39,13 +82,11 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-  <!-- Text inputs on the Add a Class pop-up (fixed colors so they read on the white card in dark mode) -->
     <style name="FormInput" parent="BaseSurveyText">
         <item name="android:textColorHint">#757575</item>
         <item name="android:backgroundTint">#3F51B5</item>
     </style>
 
-    <!-- Grey box buttons for picking start/end time (same grey as the hazard "..." box) -->
     <style name="TimeBoxButton" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:background">#E0E0E0</item>
         <item name="android:textAllCaps">false</item>

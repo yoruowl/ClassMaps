@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    SHARED SCREEN HEADER (back arrow + title), used on every screen except
-    the main map and the navigation screen. Set the title from code with
-    setScreenTitle(R.string.xxx). BaseActivity wires the back arrow.
--->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -33,7 +28,7 @@
 
         <TextView
             android:id="@+id/tv_screen_title"
-            style="@style/Widget.CampusNav.ScreenTitle"
+            style="@style/Widget.ClassMaps.ScreenTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

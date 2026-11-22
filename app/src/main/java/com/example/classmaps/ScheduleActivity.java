@@ -48,7 +48,6 @@ public class ScheduleActivity extends AppCompatActivity {
     private LinearLayout classListContainer;
     private TextView emptyScheduleText;
 
-    // Times picked in the currently open pop-up
     private int startMinutes = NOT_PICKED;
     private int endMinutes = NOT_PICKED;
 
@@ -82,7 +81,6 @@ public class ScheduleActivity extends AppCompatActivity {
         final Button startButton = (Button) dialog.findViewById(R.id.start_time_button);
         final Button endButton = (Button) dialog.findViewById(R.id.end_time_button);
 
-        // Order matches the labels M T W Th F
         final CheckBox[] dayBoxes = new CheckBox[] {
                 (CheckBox) dialog.findViewById(R.id.day_mon),
                 (CheckBox) dialog.findViewById(R.id.day_tue),
@@ -108,7 +106,6 @@ public class ScheduleActivity extends AppCompatActivity {
             String room = roomInput.getText().toString().trim();
             String days = selectedDays(dayBoxes);
 
-            // Validate; the pop-up stays open until everything is filled in
             boolean valid = true;
             if (name.isEmpty()) {
                 nameInput.setError(getString(R.string.error_required));
@@ -186,7 +183,6 @@ public class ScheduleActivity extends AppCompatActivity {
         emptyScheduleText.setVisibility(View.GONE);
     }
 
-    // Formats minutes-after-midnight using the phone's 12/24 hour setting (e.g. "9:30 AM")
     private String formatTime(int minutes) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR_OF_DAY, minutes / 60);

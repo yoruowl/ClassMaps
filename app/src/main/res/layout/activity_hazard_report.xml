@@ -6,7 +6,6 @@
     android:orientation="vertical"
     android:padding="24dp">
 
-    <!-- RelativeLayout pins the back button left and centers the title + warning icon across the full width -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -79,7 +78,6 @@
                 android:text="@string/hazard_type_placeholder"
                 android:textSize="18sp" />
 
-            <!-- Scrollable hazard list with visible scrollbar -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

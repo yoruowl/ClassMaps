@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    SHARED TOP BAR. Included at the top of every screen:
-        <include layout="@layout/view_top_bar" />
-    BaseActivity fills in the day and time automatically and pads it under
-    the system status bar. Do not change the view ids.
--->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/top_bar"
-    style="@style/Widget.CampusNav.TopBar"
+    style="@style/Widget.ClassMaps.TopBar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tv_top_day"
-        style="@style/Widget.CampusNav.TopBarText"
+        style="@style/Widget.ClassMaps.TopBarText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -32,7 +26,7 @@
 
     <TextView
         android:id="@+id/tv_top_time"
-        style="@style/Widget.CampusNav.TopBarText"
+        style="@style/Widget.ClassMaps.TopBarText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"

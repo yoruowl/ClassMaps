@@ -1,4 +1,4 @@
-package edu.uwec.campusnav.ui;
+package com.example.classmaps.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -14,16 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-import edu.uwec.campusnav.R;
+import com.example.classmaps.R;
 
-/**
- * PLACEHOLDER indoor floor plan, matching the "303 Route (inside)" and
- * still needs real floor plan per building/floor (image or
- * vector) and real room positions. Keep {@link #configure} as the entry point.
- */
 public class FloorPlanView extends View {
 
-    // Normalized layout (0..1), shared by drawing and routing.
     private static final RectF OUTER = new RectF(0.05f, 0.03f, 0.95f, 0.97f);
     private static final RectF LEFT_ROOMS = new RectF(0.05f, 0.13f, 0.28f, 0.87f);
     private static final RectF RIGHT_ROOMS = new RectF(0.72f, 0.13f, 0.95f, 0.87f);
@@ -36,8 +30,8 @@ public class FloorPlanView extends View {
     private static final RectF DEST_ROOM = new RectF(0.05f, 0.50f, 0.28f, 0.68f);
     private static final float[] ROOM_DIVIDERS = {0.32f, 0.50f, 0.68f};
 
-    private static final float HALL_X = 0.34f;      // left hallway
-    private static final float TOP_HALL_Y = 0.17f;  // hallway under the elevator
+    private static final float HALL_X = 0.34f;
+    private static final float TOP_HALL_Y = 0.17f;
     private static final float BOTTOM_HALL_Y = 0.82f;
     private static final float[] ENTRANCE = {0.50f, 0.96f};
     private static final float[] ELEVATOR_DOOR = {0.50f, 0.11f};
@@ -142,7 +136,6 @@ public class FloorPlanView extends View {
         canvas.drawLine(CENTER_BLOCK.left * w, 0.40f * h, CENTER_BLOCK.right * w, 0.40f * h, wallPaint);
         canvas.drawLine(CENTER_BLOCK.left * w, 0.58f * h, CENTER_BLOCK.right * w, 0.58f * h, wallPaint);
 
-        // Stairs + elevator (highlight whichever this route uses)
         boolean stairsInUse = !useElevator && floor < destinationFloor;
         boolean arrivedByStairs = !useElevator && !isEntryFloor;
         drawStairs(canvas, STAIRS_NW, false, w, h);
@@ -166,7 +159,6 @@ public class FloorPlanView extends View {
         drawUser(canvas, route[0][0] * w, route[0][1] * h);
     }
 
-    /** Waypoints (normalized) for the current floor. First point = where the user is. */
     private float[][] routeForThisFloor(boolean isEntryFloor, boolean isDestinationFloor) {
         if (isEntryFloor && isDestinationFloor) {
             return new float[][]{ENTRANCE, {ENTRANCE[0], BOTTOM_HALL_Y}, {HALL_X, BOTTOM_HALL_Y},
@@ -187,7 +179,6 @@ public class FloorPlanView extends View {
         if (isDestinationFloor) {
             return new float[][]{STAIRS_DOOR, STAIRS_HALL, {HALL_X, ROOM_DOOR[1]}, ROOM_DOOR};
         }
-        // Intermediate floor on the stairs route: keep climbing.
         return new float[][]{STAIRS_DOOR};
     }
 
