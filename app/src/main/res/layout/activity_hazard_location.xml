@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Wireframe: hazard location picker ("Cancel | Tap where hazard is" -> "Back | Confirm") -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -8,7 +7,7 @@
 
     <include layout="@layout/view_top_bar" />
 
-    <edu.uwec.campusnav.ui.CampusMapView
+    <com.example.classmaps.ui.CampusMapView
         android:id="@+id/map_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,11 +15,10 @@
 
     <LinearLayout
         android:id="@+id/bottom_bar"
-        style="@style/Widget.CampusNav.BottomBar"
+        style="@style/Widget.ClassMaps.BottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- "Cancel" before a tap, "Back" after -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_left"
             style="@style/Widget.Material3.Button.OutlinedButton"
@@ -29,7 +27,6 @@
             android:text="@string/action_cancel"
             app:cornerRadius="26dp" />
 
-        <!-- Hidden (INVISIBLE, keeps spacing) once a spot is picked -->
         <TextView
             android:id="@+id/tv_hint"
             android:layout_width="0dp"

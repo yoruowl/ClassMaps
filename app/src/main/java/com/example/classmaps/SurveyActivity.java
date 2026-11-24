@@ -33,7 +33,6 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
             starButtons[i].setOnClickListener(this);
         }
 
-        // Store Switch references so we can read .isChecked() directly on Submit (works for tap & drag)
         obstacleSwitch = (Switch) findViewById(R.id.obstacle_switch);
         roomSwitch = (Switch) findViewById(R.id.room_switch);
 
@@ -58,7 +57,6 @@ public class SurveyActivity extends AppCompatActivity implements View.OnClickLis
         } else if (id == R.id.star_5) {
             updateRating(5);
         } else if (id == R.id.submit_button) {
-            // OFF (left) = No (false), ON (right) = Yes (true)
             boolean encounteredObstacle = obstacleSwitch.isChecked();
             boolean foundRoomEasily = roomSwitch.isChecked();
 

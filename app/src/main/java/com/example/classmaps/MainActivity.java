@@ -2,40 +2,53 @@ package com.example.classmaps;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.classmaps.ui.CampusMapView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity {
+
+    private static final String STATE_AVOID_STAIRS = "avoid_stairs";
+
+    private ImageButton btnStairs;
+    private boolean avoidStairs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button scheduleButton = (Button) findViewById(R.id.open_schedule_button);
-        Button surveyButton = (Button) findViewById(R.id.open_survey_button);
-        Button hazardButton = (Button) findViewById(R.id.open_hazard_button);
-        Button roomFinderButton = (Button) findViewById(R.id.open_room_finder_button);
+        if (savedInstanceState != null) {
+            avoidStairs = savedInstanceState.getBoolean(STATE_AVOID_STAIRS, false);
+        }
 
-        scheduleButton.setOnClickListener(this);
-        surveyButton.setOnClickListener(this);
-        hazardButton.setOnClickListener(this);
-        roomFinderButton.setOnClickListener(this);
+        CampusMapView mapView = findViewById(R.id.map_view);
+        mapView.setUserLocation(CampusMapView.DEFAULT_START_X, CampusMapView.DEFAULT_START_Y);
+
+        btnStairs = findViewById(R.id.btn_accessibility);
+        btnStairs.setSelected(avoidStairs);
+        btnStairs.setOnClickListener(v -> toggleStairs());
+
+        findViewById(R.id.btn_report_hazard).setOnClickListener(
+                v -> startActivity(new Intent(this, HazardReportActivity.class)));
+        findViewById(R.id.btn_find_room).setOnClickListener(
+                v -> startActivity(new Intent(this, RoomFinderActivity.class)));
+        findViewById(R.id.btn_schedule).setOnClickListener(
+                v -> startActivity(new Intent(this, ScheduleActivity.class)));
     }
 
     @Override
-    public void onClick(View v) {
-        int id = v.getId();
-        if (id == R.id.open_schedule_button) {
-            startActivity(new Intent(this, ScheduleActivity.class));
-        } else if (id == R.id.open_survey_button) {
-            startActivity(new Intent(this, SurveyActivity.class));
-        } else if (id == R.id.open_hazard_button) {
-            startActivity(new Intent(this, HazardReportActivity.class));
-        } else if (id == R.id.open_room_finder_button) {
-            startActivity(new Intent(this, RoomFinderActivity.class));
-        }
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(STATE_AVOID_STAIRS, avoidStairs);
+    }
+
+    private void toggleStairs() {
+        avoidStairs = !avoidStairs;
+        btnStairs.setSelected(avoidStairs);
+        Toast.makeText(this,
+                avoidStairs ? R.string.toast_accessibility_on : R.string.toast_accessibility_off,
+                Toast.LENGTH_SHORT).show();
     }
 }

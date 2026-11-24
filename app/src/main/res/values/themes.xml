@@ -1,5 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.ClassMaps" parent="Theme.Material3.DayNight.NoActionBar">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.ClassMaps" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/on_accent</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:colorBackground">@color/surface</item>
     </style>
 
     <style name="Theme.ClassMaps" parent="Base.Theme.ClassMaps" />

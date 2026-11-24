@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Shared bar sizing: every screen's top and bottom bar uses these. -->
     <dimen name="top_bar_min_height">40dp</dimen>
     <dimen name="bottom_bar_min_height">72dp</dimen>
     <dimen name="bar_padding_h">16dp</dimen>

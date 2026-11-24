@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#1E3A5F</color>
+    <color name="accent">#F2B705</color>
+
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_accent">#1B1F24</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="bar_background">#F4F6F9</color>
+    <color name="banner_background">#FFF4CC</color>
+    <color name="divider">#D5DBE3</color>
+    <color name="text_primary">#1B1F24</color>
+    <color name="text_secondary">#5B6573</color>
+    <color name="hazard">#D93025</color>
+    <color name="route">#1E73E8</color>
+
+    <color name="map_grass">#E3EEDC</color>
+    <color name="map_path">#FFFFFF</color>
+    <color name="map_building">#D7DEE6</color>
+    <color name="map_building_stroke">#7A8A9C</color>
+    <color name="map_highlight">#FFE08A</color>
+
+    <color name="floor_background">#FAFBFC</color>
+    <color name="floor_wall">#44515F</color>
 </resources>

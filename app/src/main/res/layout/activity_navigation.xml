@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Wireframes: "Guest Route (Outside)", "Guest Route L1", "303 Route (inside) L1-L3",
-    "303 Route (Access) L1/L3". One screen; it swaps between the outdoor map and
-    the indoor floor plan as the user moves through the route.
--->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -32,7 +27,6 @@
             android:textStyle="bold"
             tools:text="Walk to Schneider Hall" />
 
-        <!-- TODO: remove once real location updates drive the steps. -->
         <TextView
             android:id="@+id/tv_dev_hint"
             android:layout_width="match_parent"
@@ -47,7 +41,7 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <edu.uwec.campusnav.ui.CampusMapView
+        <com.example.classmaps.ui.CampusMapView
             android:id="@+id/map_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -61,7 +55,7 @@
 
             <TextView
                 android:id="@+id/tv_floor_title"
-                style="@style/Widget.CampusNav.ScreenTitle"
+                style="@style/Widget.ClassMaps.ScreenTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="@dimen/screen_padding"
@@ -69,7 +63,7 @@
                 android:paddingEnd="@dimen/screen_padding"
                 tools:text="Schneider Hall, Floor 1" />
 
-            <edu.uwec.campusnav.ui.FloorPlanView
+            <com.example.classmaps.ui.FloorPlanView
                 android:id="@+id/floor_plan_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -79,7 +73,7 @@
 
     <LinearLayout
         android:id="@+id/bottom_bar"
-        style="@style/Widget.CampusNav.BottomBar"
+        style="@style/Widget.ClassMaps.BottomBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

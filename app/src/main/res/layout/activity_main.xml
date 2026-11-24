@@ -1,72 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <!-- Background map placeholder -->
-    <ImageView
+    <include layout="@layout/view_top_bar" />
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/map_background_desc"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="24dp">
-
-        <TextView
-            style="@style/SurveyHeadingText"
+        <com.example.classmaps.ui.CampusMapView
+            android:id="@+id/map_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:background="#E6FFFFFF"
-            android:gravity="center"
-            android:padding="16dp"
-            android:text="@string/app_name"
-            android:textSize="22sp" />
+            android:layout_height="match_parent" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#F2FFFFFF"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_gravity="top|start"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/open_schedule_button"
-                style="@style/PrimaryActionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/schedule_title" />
+            <ImageButton
+                android:id="@+id/btn_report_hazard"
+                style="@style/Widget.ClassMaps.MapButton"
+                android:layout_width="@dimen/map_button_size"
+                android:layout_height="@dimen/map_button_size"
+                android:contentDescription="@string/cd_report_hazard"
+                android:src="@drawable/ic_warning"
+                app:tint="@color/map_button_icon_tint" />
 
-            <Button
-                android:id="@+id/open_survey_button"
-                style="@style/PrimaryActionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/route_completed" />
-
-            <Button
-                android:id="@+id/open_hazard_button"
-                style="@style/PrimaryActionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/hazard_report_title" />
-
-            <Button
-                android:id="@+id/open_room_finder_button"
-                style="@style/PrimaryActionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/room_finder_title" />
+            <ImageButton
+                android:id="@+id/btn_accessibility"
+                style="@style/Widget.ClassMaps.MapButton"
+                android:layout_width="@dimen/map_button_size"
+                android:layout_height="@dimen/map_button_size"
+                android:layout_marginStart="12dp"
+                android:contentDescription="@string/cd_accessibility"
+                android:src="@drawable/ic_accessible"
+                app:tint="@color/map_button_icon_tint" />
         </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        style="@style/Widget.ClassMaps.BottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_find_room"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/round_button_size"
+            android:layout_weight="1"
+            android:text="@string/action_find_room"
+            android:textSize="16sp"
+            app:cornerRadius="26dp"
+            app:icon="@drawable/ic_search"
+            app:iconGravity="end" />
+
+        <ImageButton
+            android:id="@+id/btn_schedule"
+            style="@style/Widget.ClassMaps.MapButton"
+            android:layout_width="@dimen/round_button_size"
+            android:layout_height="@dimen/round_button_size"
+            android:layout_marginStart="12dp"
+            android:contentDescription="@string/cd_schedule"
+            android:src="@drawable/ic_calendar"
+            app:tint="@color/map_button_icon_tint" />
     </LinearLayout>
-</FrameLayout>
+
+</LinearLayout>

@@ -1,4 +1,4 @@
-package edu.uwec.campusnav.ui;
+package com.example.classmaps.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -21,11 +21,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import edu.uwec.campusnav.R;
+import com.example.classmaps.R;
 
-/** still needs to be replaced with a real map (Google Maps SDK / osmdroid / campus
- * image). Keep the same public methods so the screens don't need to change.
- */
 public class CampusMapView extends View {
 
     public interface OnMapTapListener {
@@ -65,7 +62,6 @@ public class CampusMapView extends View {
             {0.00f, 0.62f, MAIN_WALK_X, 0.45f},
             {0.52f, 0.98f, 0.52f, 0.62f},
     };
-
 
     private final Paint grassPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint walkPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -165,7 +161,6 @@ public class CampusMapView extends View {
         invalidate();
     }
 
-    /** feed real GPS here. */
     public void setUserLocation(float x, float y) {
         userLocation = new float[]{x, y};
         invalidate();
@@ -187,7 +182,6 @@ public class CampusMapView extends View {
         for (float[] seg : WALKWAYS) {
             canvas.drawLine(seg[0] * w, seg[1] * h, seg[2] * w, seg[3] * h, walkPaint);
         }
-        // Plaza (the "sun" circle in the sketches)
         canvas.drawCircle(0.16f * w, 0.33f * h, 0.08f * Math.min(w, h), walkPaint);
 
         for (Map.Entry<String, RectF> entry : FOOTPRINTS.entrySet()) {
